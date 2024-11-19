@@ -1,0 +1,13 @@
+{
+    "name": "SIB Currency Tracker",
+    "short_name": "CurrencyTracker",
+    "start_url": "/",
+    "display": "fullscreen",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [{
+        "src": "/sibplc-logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }]
+}

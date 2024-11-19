@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontendController::class, 'welcome']);
-
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     // dashboard
