@@ -1,7 +1,6 @@
 const CACHE_NAME = 'currency-tracker-cache';
 const DATA_CACHE_NAME = 'data-cache-v1';
 const API_URL = 'https://dev.ailservers.com/sib-currency-tracker-backend/api/data';
-
 // Install the service worker and cache static assets
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -18,7 +17,6 @@ self.addEventListener('install', (event) => {
     );
     self.skipWaiting();
 });
-
 // Activate the service worker
 self.addEventListener('activate', (event) => {
     event.waitUntil(
@@ -34,7 +32,6 @@ self.addEventListener('activate', (event) => {
     );
     self.clients.claim();
 });
-
 // Fetch event to handle caching API responses and image assets
 self.addEventListener('fetch', (event) => {
     // Handle API requests

@@ -1,6 +1,6 @@
 {
     "name": "frontend",
-    "homepage": "https://dev.ailservers.com/sib-currency-tracker-frontend/",
+    "homepage": "/",
     "private": true,
     "version": "0.0.0",
     "type": "module",

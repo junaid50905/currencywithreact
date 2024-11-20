@@ -60,97 +60,95 @@ function App() {
     // }, []);
 
 
-
-
-
-
     return (
-        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
+        <>
+            <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
 
-                {/* Carousel item for Exchange Rates */}
-                <div className="carousel-item bg-primary active" data-bs-interval={exchangeRateDuration}>
-                    <h1 className="text-danger text-center"
-                        style={{ marginTop: '5vh', fontSize: 'calc(20px + 3vw)', marginBottom: '5vh' }}>
-                        Foreign Currency Exchange Rate
-                    </h1>
-                    <div className="table-responsive" style={{ margin: '0 10vw' }}>
-                        <table className="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th className='text-center'>Currency</th>
-                                    <th>Code</th>
-                                    <th>Buying (BDT)</th>
-                                    <th>Selling (BDT)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {exchangeRates.map((rate, index) => (
-                                    <tr key={index}>
-                                        <td>
-                                            <div className='d-flex justify-content-between'>
-                                                <span>{rate.currency_symbol}</span>
-                                                <span>{rate.currency_name}</span>
-                                                <span><img src={rate.currency_flag} height={'60'} width={'90'} alt={`${rate.currency_code} flag`} /></span>
-                                            </div>
-                                        </td>
-                                        <td>{rate.currency_code}</td>
-                                        <td>{rate.buying_rate}</td>
-                                        <td>{rate.selling_rate}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                {/* Carousel item for Profits */}
-                {profits.map((profit, index) => (
-                    <div key={index} className="carousel-item bg-primary" data-bs-interval={profitDuration}>
-                        <h1 className="text-danger text-center" style={{ marginTop: '5vh', fontSize: 'calc(20px + 3vw)', marginBottom: '5vh' }}>
-                            {profit.title}
+                    {/* Carousel item for Exchange Rates */}
+                    <div className="carousel-item bg-primary active" data-bs-interval={exchangeRateDuration}>
+                        <h1 className="text-danger text-center"
+                            style={{ marginTop: '5vh', fontSize: 'calc(20px + 3vw)', marginBottom: '5vh' }}>
+                            Foreign Currency Exchange Rate
                         </h1>
                         <div className="table-responsive" style={{ margin: '0 10vw' }}>
                             <table className="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th className='text-center'>Currency</th>
+                                        <th>Code</th>
+                                        <th>Buying (BDT)</th>
+                                        <th>Selling (BDT)</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
-                                    {profit.profit_rates.map((rate, rateindex) => (
-                                        <tr key={rateindex}>
-                                            <td>{rate.profitRate_title}</td>
-                                            <td>{rate.profitRate_rate}</td>
+                                    {exchangeRates.map((rate, index) => (
+                                        <tr key={index}>
+                                            <td>
+                                                <div className='d-flex justify-content-between'>
+                                                    <span>{rate.currency_symbol}</span>
+                                                    <span>{rate.currency_name}</span>
+                                                    <span><img src={rate.currency_flag} height={'60'} width={'90'} alt={`${rate.currency_code} flag`} /></span>
+                                                </div>
+                                            </td>
+                                            <td>{rate.currency_code}</td>
+                                            <td>{rate.buying_rate}</td>
+                                            <td>{rate.selling_rate}</td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                ))}
+
+                    {/* Carousel item for Profits */}
+                    {profits.map((profit, index) => (
+                        <div key={index} className="carousel-item bg-primary" data-bs-interval={profitDuration}>
+                            <h1 className="text-danger text-center" style={{ marginTop: '5vh', fontSize: 'calc(20px + 3vw)', marginBottom: '5vh' }}>
+                                {profit.title}
+                            </h1>
+                            <div className="table-responsive" style={{ margin: '0 10vw' }}>
+                                <table className="table table-bordered table-striped">
+                                    <tbody>
+                                        {profit.profit_rates.map((rate, rateindex) => (
+                                            <tr key={rateindex}>
+                                                <td>{rate.profitRate_title}</td>
+                                                <td>{rate.profitRate_rate}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    ))}
 
 
-                {/* Carousel item for Images */}
-                {images.map((image, index) => (
-                    <div key={index} className="carousel-item" data-bs-interval={image.duration}>
-                        <img src={image.image_url} className="d-block w-100" />
-                    </div>
-                ))}
+                    {/* Carousel item for Images */}
+                    {images.map((image, index) => (
+                        <div key={index} className="carousel-item" data-bs-interval={image.duration}>
+                            <img src={image.image_url} className="d-block w-100" />
+                        </div>
+                    ))}
 
-                {/* Carousel item for Videos */}
-                {videos.map((video, index) => (
-                    <div className="carousel-item" data-bs-interval={video.duration} key={index}>
-                        <video
-                            className="video-player"
-                            autoPlay
-                            muted
-                            playsInline
-                            onEnded={(e) => {
-                                e.target.currentTime = 0;
-                            }}
-                        >
-                            <source src={video.video_url} type="video/mp4" />
-                        </video>
-                    </div>
-                ))}
+                    {/* Carousel item for Videos */}
+                    {videos.map((video, index) => (
+                        <div className="carousel-item" data-bs-interval={video.duration} key={index}>
+                            <video
+                                className="video-player"
+                                autoPlay
+                                muted
+                                playsInline
+                                onEnded={(e) => {
+                                    e.target.currentTime = 0;
+                                }}
+                            >
+                                <source src={video.video_url} type="video/mp4" />
+                            </video>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
